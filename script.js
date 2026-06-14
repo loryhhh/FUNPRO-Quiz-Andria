@@ -1,6 +1,7 @@
 const questions = [
     {
         question: "Qual é o nome do protagonista de Andria?",
+        image: "imagens/cachorros1.jpg",
         answers: [
             { text: "Rafael", correct: false },
             { text: "Jorge", correct: true },
@@ -11,6 +12,7 @@ const questions = [
 
     {
         question: "Em uma das cenas da peça, uma marca de vitaminas é mencionada. Qual era o nome dessa marca?",
+        image: "imagens/gatos1.jpg",
         answers: [
             { text: "NósRosa", correct: true },
             { text: "WePink", correct: false },
@@ -21,6 +23,7 @@ const questions = [
 
     {
         question: "Qual o nome do personagem cujo o qual Amanda, namorada de Jorge, conversava e, consequentemente, chegou a se apaixonar?",
+        image: "imagens/cachorros2.jpg",
         answers: [
             { text: "Goku", correct: false },
             { text: "Naruto", correct: false },
@@ -30,7 +33,8 @@ const questions = [
     },
 
     {
-        question: "Entre as opções abaixo, escolha a que contérm a mensagem que a Mãe Natureza transmite ao fim da peça:",
+        question: "Entre as opções abaixo, escolha a que contém a mensagem que a Mãe Natureza transmite ao fim da peça:",
+        image: "imagens/coelhos1.jpg",
         answers: [
             { text: "Os humanos devem destruir o mundo.", correct: false },
             { text: "Devemos cuidar e respeitar o Meio Ambiente, para preservar a vida no planeta.", correct: true },
@@ -41,6 +45,7 @@ const questions = [
 
     {
         question: "Em que posição na classificação geral das peças Andria ficou?",
+        image: "imagens/bichosfofos1.jpg",
         answers: [
             { text: "9° Lugar", correct: false },
             { text: "Em último lugar", correct: false },
@@ -50,7 +55,10 @@ const questions = [
     }
 ];
 
+
 const questionElement = document.getElementById("question");
+const counterElement = document.getElementById("question-counter");
+const imageElement = document.getElementById("question-image");
 const answersElement = document.getElementById("answers");
 const nextButton = document.getElementById("next-btn");
 
@@ -62,6 +70,7 @@ const resultContainer = document.getElementById("result");
 
 const scoreElement = document.getElementById("score");
 const messageElement = document.getElementById("message");
+
 
 let currentQuestion = 0;
 let score = 0;
@@ -84,8 +93,15 @@ function showQuestion() {
     resetState();
 
     let current = questions[currentQuestion];
+    
+
+    counterElement.innerText =
+        `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+
     questionElement.innerText =
-        `${currentQuestion + 1}. ${current.question}`;
+        current.question;
+
+    imageElement.src = current.image;
 
     current.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -143,23 +159,31 @@ nextButton.addEventListener("click", () => {
 });
 
 function showResult() {
-    document.getElementById("quiz").classList.add("hidden");
-    document.getElementById("result").classList.remove("hidden");
+    quizContainer.classList.add("hidden");
+    resultContainer.classList.remove("hidden");
 
-    document.getElementById("score").innerText =
-        `Você acertou ${score} de ${questions.length} perguntas!`;
+    const points = (score / questions.length) * 100;
+
+    scoreElement.innerHTML =
+        `Você acertou ${score} de ${questions.length} perguntas!<br><br>
+         Pontuação: ${points}/100`;
 
     let message = "";
 
-    if (score === questions.length) {
-        message = "Excelente!";
-    } else if (score >= 3) {
-        message = "Bom trabalho!";
-    } else {
-        message = "Tente novamente!";
+    if (points === 100) {
+        message = "🏆 Parabéns! Você é um grande fã de Andria.";
+    } 
+    else if (points >= 80) {
+        message = "👏 Excelente resultado!";
+    } 
+    else if (points >= 60) {
+        message = "👍 Bom trabalho!";
+    } 
+    else {
+        message = "📚 Que pena... Tente novamente!";
     }
 
-    document.getElementById("message").innerText = message;
+    messageElement.innerText = message;
 }
 
 function restartQuiz() {
