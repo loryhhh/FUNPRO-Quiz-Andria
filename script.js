@@ -3,10 +3,10 @@ const questions = [
         question: "Qual é o nome do protagonista de Andria?",
         image: "imagens/cachorros1.jpg",
         answers: [
-            { text: "Rafael", correct: false },
-            { text: "Jorge", correct: true },
-            { text: "Amanda", correct: false },
-            { text: "Carlos", correct: false }
+            { text: "Rafael.", correct: false },
+            { text: "Jorge.", correct: true },
+            { text: "Amanda.", correct: false },
+            { text: "Carlos.", correct: false }
         ]
     },
 
@@ -14,10 +14,10 @@ const questions = [
         question: "Em uma das cenas da peça, uma marca de vitaminas é mencionada. Qual era o nome dessa marca?",
         image: "imagens/gatos1.jpg",
         answers: [
-            { text: "NósRosa", correct: true },
-            { text: "WePink", correct: false },
-            { text: "Vitaminados", correct: false },
-            { text: "MariaMaria", correct: false }
+            { text: "NósRosa.", correct: true },
+            { text: "WePink.", correct: false },
+            { text: "Vitaminados.", correct: false },
+            { text: "MariaMaria.", correct: false }
         ]
     },
 
@@ -25,10 +25,10 @@ const questions = [
         question: "Qual o nome do personagem cujo o qual Amanda, namorada de Jorge, conversava e, consequentemente, chegou a se apaixonar?",
         image: "imagens/cachorros2.jpg",
         answers: [
-            { text: "Goku", correct: false },
-            { text: "Naruto", correct: false },
-            { text: "Mickey Mouse", correct: false },
-            { text: "Satoru Gojo", correct: true }
+            { text: "Goku.", correct: false },
+            { text: "Naruto.", correct: false },
+            { text: "Mickey Mouse.", correct: false },
+            { text: "Satoru Gojo.", correct: true }
         ]
     },
 
@@ -47,10 +47,43 @@ const questions = [
         question: "Em que posição na classificação geral das peças Andria ficou?",
         image: "imagens/bichosfofos1.jpg",
         answers: [
-            { text: "9° Lugar", correct: false },
-            { text: "Em último lugar", correct: false },
-            { text: "8° Lugar", correct: true },
-            { text: "3° Lugar", correct: false }
+            { text: "9° Lugar.", correct: false },
+            { text: "Em último lugar.", correct: false },
+            { text: "8° Lugar.", correct: true },
+            { text: "3° Lugar.", correct: false }
+        ]
+    },
+
+    {
+        question: "Quem era Andria?",
+        image: "imagens/bichosfofos1.jpg",
+        answers: [
+            { text: "A Leticia.", correct: false },
+            { text: "Uma inteligência artificial.", correct: true },
+            { text: "Uma menina do campo.", correct: false },
+            { text: "Figurante.", correct: false }
+        ]
+    },
+
+    {
+        question: "Qual foi o motivo da revolta de Jorge contra o Pintor?",
+        image: "imagens/bichosfofos1.jpg",
+        answers: [
+            { text: "Ele apenas quis.", correct: false },
+            { text: "Ele tentou roubar sua namorada.", correct: false },
+            { text: "Não havia motivo.", correct: false },
+            { text: "Devido ao pintor não ter feito de fato sua pintura, mas sim ter pedido que a IA fizesse.", correct: true }
+        ]
+    },
+
+    {
+        question: "Quem é esse personagem?",
+        image: "imagens/bichosfofos1.jpg",
+        answers: [
+            { text: "Amanda.", correct: false },
+            { text: "Andria.", correct: true },
+            { text: "Rafael.", correct: false },
+            { text: "Pintor.", correct: false }
         ]
     }
 ];
@@ -179,6 +212,12 @@ function showResult() {
     else if (points >= 60) {
         message = "👍 Bom trabalho!";
     } 
+    else if (points >= 50) {
+        message = "😐 Ah... Talvez você deva assistir mais a peça.";
+    }
+    else if (points === 0) {
+        message = "😡 Grr... Você DEFINITIVAMENTE não assistiu Andria!";
+    }
     else {
         message = "📚 Que pena... Tente novamente!";
     }
