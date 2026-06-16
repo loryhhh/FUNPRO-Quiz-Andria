@@ -1,7 +1,6 @@
-const questions = [
-    {
+const questions = [{
         question: "Qual é o nome do protagonista de Andria?",
-        image: "imagens/cachorros1.jpg",
+        image: "https://i.pinimg.com/736x/68/88/05/688805d8c1a04016787fe9f51d37e459.jpg",
         answers: [
             { text: "Rafael.", correct: false },
             { text: "Jorge.", correct: true },
@@ -12,7 +11,7 @@ const questions = [
 
     {
         question: "Em uma das cenas da peça, uma marca de vitaminas é mencionada. Qual era o nome dessa marca?",
-        image: "imagens/gatos1.jpg",
+        image: "https://i.pinimg.com/736x/1a/a1/41/1aa141f3b5483ccc5ec22a3fd609c1ad.jpg",
         answers: [
             { text: "NósRosa.", correct: true },
             { text: "WePink.", correct: false },
@@ -23,7 +22,7 @@ const questions = [
 
     {
         question: "Qual o nome do personagem cujo o qual Amanda, namorada de Jorge, conversava e, consequentemente, chegou a se apaixonar?",
-        image: "imagens/cachorros2.jpg",
+        image: "https://i.pinimg.com/736x/00/a2/17/00a217771049d897c7ebc9565b3dc7c1.jpg",
         answers: [
             { text: "Goku.", correct: false },
             { text: "Naruto.", correct: false },
@@ -34,7 +33,7 @@ const questions = [
 
     {
         question: "Entre as opções abaixo, escolha a que contém a mensagem que a Mãe Natureza transmite ao fim da peça:",
-        image: "imagens/coelhos1.jpg",
+        image: "https://i.pinimg.com/736x/46/20/21/4620218eca6e90cffa2150e98d26b217.jpg",
         answers: [
             { text: "Os humanos devem destruir o mundo.", correct: false },
             { text: "Devemos cuidar e respeitar o Meio Ambiente, para preservar a vida no planeta.", correct: true },
@@ -45,7 +44,7 @@ const questions = [
 
     {
         question: "Em que posição na classificação geral das peças Andria ficou?",
-        image: "imagens/bichosfofos1.jpg",
+        image: "https://i.pinimg.com/1200x/67/8d/9e/678d9e51f2acdea3a1334bd3afd64710.jpg",
         answers: [
             { text: "9° Lugar.", correct: false },
             { text: "Em último lugar.", correct: false },
@@ -56,7 +55,7 @@ const questions = [
 
     {
         question: "Quem era Andria?",
-        image: "imagens/bichosfofos1.jpg",
+        image: "https://i.pinimg.com/736x/09/a0/43/09a043eaf89dd267ed7949a283de762a.jpg",
         answers: [
             { text: "A Leticia.", correct: false },
             { text: "Uma inteligência artificial.", correct: true },
@@ -67,7 +66,7 @@ const questions = [
 
     {
         question: "Qual foi o motivo da revolta de Jorge contra o Pintor?",
-        image: "imagens/bichosfofos1.jpg",
+        image: "https://i.pinimg.com/1200x/dd/b9/a1/ddb9a1828d4ee0b96d7e18f35b60509f.jpg",
         answers: [
             { text: "Ele apenas quis.", correct: false },
             { text: "Ele tentou roubar sua namorada.", correct: false },
@@ -84,6 +83,26 @@ const questions = [
             { text: "Andria.", correct: true },
             { text: "Rafael.", correct: false },
             { text: "Pintor.", correct: false }
+        ]
+    },
+    {
+        question: "O que Andria bebe durante a peça?",
+        image: "https://i.pinimg.com/1200x/1d/95/b2/1d95b255283a57f63173069678f296d4.jpg",
+        answers: [
+            { text: "Energetico.", correct: false },
+            { text: "Suco.", correct: false },
+            { text: "Água.", correct: true },
+            { text: "Cerveja.", correct: false }
+        ]
+    },
+    {
+        question: "Por que Rafael, amigo de Jorge, surta?",
+        image: "https://i.pinimg.com/1200x/98/05/ce/9805ce254aa9f42d9ba04a870d9034ae.jpg",
+        answers: [
+            { text: "Porque tomaram seu celular.", correct: true },
+            { text: "Porque ele está com fome.", correct: false },
+            { text: "Porque ele está bêbado.", correct: false },
+            { text: "Porque atrapalharam seu sono.", correct: false }
         ]
     }
 ];
@@ -126,7 +145,7 @@ function showQuestion() {
     resetState();
 
     let current = questions[currentQuestion];
-    
+
 
     counterElement.innerText =
         `Pergunta ${currentQuestion + 1} de ${questions.length}`;
@@ -205,20 +224,15 @@ function showResult() {
 
     if (points === 100) {
         message = "🏆 Parabéns! Você é um grande fã de Andria.";
-    } 
-    else if (points >= 80) {
+    } else if (points >= 80) {
         message = "👏 Excelente resultado!";
-    } 
-    else if (points >= 60) {
+    } else if (points >= 60) {
         message = "👍 Bom trabalho!";
-    } 
-    else if (points >= 50) {
+    } else if (points >= 50) {
         message = "😐 Ah... Talvez você deva assistir mais a peça.";
-    }
-    else if (points === 0) {
+    } else if (points === 0) {
         message = "😡 Grr... Você DEFINITIVAMENTE não assistiu Andria!";
-    }
-    else {
+    } else {
         message = "📚 Que pena... Tente novamente!";
     }
 
