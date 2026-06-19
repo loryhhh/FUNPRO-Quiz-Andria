@@ -77,7 +77,7 @@ const questions = [{
 
     {
         question: "Quem é esse personagem?",
-        image: "imagens/bichosfofos1.jpg",
+        image: "https://lh3.googleusercontent.com/pw/AP1GczM6A4MDhJ8AAcNNIKDkeCEac_lxvZvWioQQK0j0yxeI9B_DWonHNDjBm-DpC6Z1xtAccKlMg0WhWCb36iYUoSKRQVajZ_UN5sm5d84a-xL1l1tbfo5TXPw_YiM-R_QunVgP5EOcrw33h9-H9C1vJy2NKQ=w1418-h945-s-no-gm",
         answers: [
             { text: "Amanda.", correct: false },
             { text: "Andria.", correct: true },
