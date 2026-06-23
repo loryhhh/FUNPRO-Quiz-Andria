@@ -138,6 +138,8 @@ function startQuiz() {
     currentQuestion = 0;
     score = 0;
 
+    nextButton.innerText = "Próxima pergunta";
+
     showQuestion();
 }
 
@@ -145,6 +147,12 @@ function showQuestion() {
     resetState();
 
     let current = questions[currentQuestion];
+
+    if (currentQuestion === questions.length - 1) {
+        nextButton.innerText = "Ver resultado";
+    } else {
+        nextButton.innerText = "Próxima pergunta";
+    }
 
 
     counterElement.innerText =
